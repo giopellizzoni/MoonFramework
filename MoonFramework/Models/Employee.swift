@@ -9,11 +9,11 @@
 import Foundation
 
 
-struct EmployeesData: Codable, Equatable {
+public struct EmployeesData: Codable, Equatable {
     
     let employees: [Employee]
     
-    static func == (lhs: EmployeesData, rhs: EmployeesData) -> Bool {
+    public static func == (lhs: EmployeesData, rhs: EmployeesData) -> Bool {
         return lhs.employees == rhs.employees
     }
     
@@ -22,7 +22,7 @@ struct EmployeesData: Codable, Equatable {
     }
 }
 
-struct Employee: Codable, Equatable {
+public struct Employee: Codable, Equatable {
     
     let fname: String
     let lname: String
@@ -30,7 +30,7 @@ struct Employee: Codable, Equatable {
     let position: String
     let projects: [String]?
     
-    static func == (lhs: Employee, rhs: Employee) -> Bool {
+    public static func == (lhs: Employee, rhs: Employee) -> Bool {
         return (lhs.fname == rhs.fname && rhs.lname == rhs.lname)
     }
     
@@ -45,7 +45,7 @@ struct Employee: Codable, Equatable {
     
 }
 
-struct ContactDetails: Codable {
+public struct ContactDetails: Codable {
     let email: String
     let phone: String?
     
