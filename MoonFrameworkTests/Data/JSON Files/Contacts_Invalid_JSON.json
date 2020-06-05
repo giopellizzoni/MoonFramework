@@ -1,0 +1,790 @@
+{
+    "employees": [
+        {
+            "lname": "Appleseed",
+            "position": "IOS",
+            "contact_details": {
+                "email": "John-Appleseed@mac.com",
+                "phone": "888 555 5512"
+            }
+        },
+        {
+            "fname": "Viktor",
+            "lname": "Rebane",
+            "position": "SALES",
+            "projects": [
+                "Tinkayeco",
+                "Domsoft",
+                "Span Silkix",
+                "Stantip",
+                "Med La"
+            ]
+        },
+        {
+            "fname": "Anneli-Marika",
+            "lname": "Mägi-Oja",
+            "position": "TESTER",
+            "contact_details": {
+                "email": "anneli-marika.magi-oja@example.ee"
+            },
+            "projects": [
+                "Blacknix",
+                "Warmlux",
+                "S-aptech",
+                "Zamfax",
+                "Tresron"
+            ]
+        },
+        {
+            "fname": "Viktoria",
+            "lname": "Koppel",
+            "position": "SALES",
+            "contact_details": {
+                "email": "viktoria.koppel@example.ee"
+            },
+            "projects": [
+                "Tin Saolax",
+                "Blackzenfax",
+                "Newron",
+                "Medla",
+                "Span Silkix",
+                "Double Nix"
+            ]
+        },
+        {
+            "fname": "Tarmo",
+            "lname": "Liiv-Teder",
+            "position": "SALES",
+            "contact_details": {
+                "email": "tarmo.liiv-teder@example.ee",
+                "phone": "+372 570 493"
+            },
+            "projects": [
+                "Mathjob",
+                "Med La"
+            ]
+        },
+        {
+            "fname": "Sergei",
+            "lname": "Kütt-Fjodorov",
+            "position": "PM",
+            "contact_details": {
+                "email": "sergei.kutt-fjodorov@example.ee"
+            },
+            "projects": [
+                "Vaianix"
+            ]
+        },
+        {
+            "fname": "Jüri-Rein",
+            "lname": "Põder",
+            "position": "PM",
+            "contact_details": {
+                "email": "juri-rein.poder@example.ee"
+            },
+            "projects": [
+                "Blacktop",
+                "Tran Lax",
+                "Warmfan"
+            ]
+        },
+        {
+            "fname": "Natalja",
+            "lname": "Petrov-Mihhailov",
+            "position": "OTHER",
+            "contact_details": {
+                "email": "natalja.petrov-mihhailov@example.ee"
+            },
+            "projects": [
+                "Tin Saolax",
+                "Damlab"
+            ]
+        },
+        {
+            "fname": "Maie-Marika",
+            "lname": "Mägi",
+            "position": "ANDROID",
+            "contact_details": {
+                "email": "maie-marika.magi@example.com"
+            },
+            "projects": [
+                "Freedox",
+                "Blacktop",
+                "Zam Zendex",
+                "Damlab",
+                "Fasetrax",
+                "Quadronex",
+                "Alpha Sing",
+                "Lamlax"
+            ]
+        },
+        {
+            "fname": "Natalia",
+            "lname": "Luik-Põder",
+            "position": "WEB",
+            "contact_details": {
+                "email": "natalia.luik-poder@example.eu"
+            },
+            "projects": [
+                "Zimlab"
+            ]
+        },
+        {
+            "fname": "Kristi-Anu",
+            "lname": "Luik-Stepanov",
+            "position": "SALES",
+            "contact_details": {
+                "email": "kristi-anu.luik-stepanov@example.ee"
+            },
+            "projects": [
+                "Groovefax",
+                "Blackzenfax",
+                "Trisron",
+                "Big-Ex",
+                "Tran Lax",
+                "Namjob",
+                "Finbam",
+                "Double Nix",
+                "Graveit",
+                "Antax"
+            ]
+        },
+        {
+            "fname": "Meelis-Kristiina",
+            "lname": "Smirnov-Lepp",
+            "position": "WEB",
+            "contact_details": {
+                "email": "meelis-kristiina.smirnov-lepp@example.eu"
+            },
+            "projects": [
+                "Tinkayeco",
+                "Fasetrax",
+                "Trisron",
+                "Medla",
+                "Roundhotstrong",
+                "Alpha Sing"
+            ]
+        },
+        {
+            "fname": "Indrek-Marek",
+            "lname": "Mihhailov",
+            "position": "IOS",
+            "contact_details": {
+                "email": "indrek-marek.mihhailov@example.com"
+            },
+            "projects": [
+                "Ranwarm",
+                "Grooveeco",
+                "Fasetrax",
+                "Over Santough",
+                "Mathjob"
+            ]
+        },
+        {
+            "fname": "Natalja-Ene",
+            "lname": "Rebane-Volkov",
+            "position": "ANDROID",
+            "contact_details": {
+                "email": "natalja-ene.rebane-volkov@example.com",
+                "phone": "+372 546 677"
+            },
+            "projects": [
+                "Blacknix",
+                "Plus-Zap",
+                "Topzap",
+                "Alphaflex",
+                "Namjob",
+                "Alpha Sing"
+            ]
+        },
+        {
+            "fname": "Jevgeni",
+            "lname": "Mölder",
+            "position": "TESTER",
+            "contact_details": {
+                "email": "jevgeni.molder@example.eu"
+            },
+            "projects": [
+                "Groovefax",
+                "Quaddom",
+                "Stronglight",
+                "Keykix",
+                "Geo-Zap",
+                "Konkeco"
+            ]
+        },
+        {
+            "fname": "Ivan-Merike",
+            "lname": "Kuusk-Põder",
+            "position": "IOS",
+            "contact_details": {
+                "email": "ivan-merike.kuusk-poder@example.eu"
+            },
+            "projects": [
+                "Scot Fix",
+                "Sailremtouch",
+                "Stantip",
+                "Double Nix"
+            ]
+        },
+        {
+            "fname": "Igor",
+            "lname": "Kuusk-Raudsepp",
+            "position": "PM",
+            "contact_details": {
+                "email": "igor.kuusk-raudsepp@example.com"
+            },
+            "projects": [
+                "Tin Saolax",
+                "Stronglight",
+                "Sailremtouch",
+                "Zaam-Eco",
+                "Roundhotstrong",
+                "Tresron"
+            ]
+        },
+        {
+            "fname": "Aleksander-Valentina",
+            "lname": "Raudsepp",
+            "position": "PM",
+            "contact_details": {
+                "email": "aleksander-valentina.raudsepp@example.eu"
+            },
+            "projects": [
+                "Sumsing",
+                "Scot Fix",
+                "Dankix",
+                "Over Santough",
+                "Medla",
+                "Ontotop",
+                "Villazentip",
+                "Tran Lax",
+                "Konkeco",
+                "Graveit"
+            ]
+        },
+        {
+            "fname": "Anu-Kristiina",
+            "lname": "Stepanov",
+            "position": "WEB",
+            "contact_details": {
+                "email": "anu-kristiina.stepanov@example.com"
+            },
+            "projects": [
+                "Sumsing",
+                "Truelax"
+            ]
+        },
+        {
+            "fname": "Vello",
+            "lname": "Kütt-Mihhailov",
+            "position": "PM",
+            "contact_details": {
+                "email": "vello.kutt-mihhailov@example.eu"
+            },
+            "projects": [
+                "Freedox",
+                "Tinkayeco",
+                "Ontotop"
+            ]
+        },
+        {
+            "fname": "Andres-Aleksandra",
+            "lname": "Lepp",
+            "position": "WEB",
+            "contact_details": {
+                "email": "andres-aleksandra.lepp@example.ee"
+            },
+            "projects": [
+                "Spancof"
+            ]
+        },
+        {
+            "fname": "Toomas",
+            "lname": "Kuusik-Ots",
+            "position": "OTHER",
+            "contact_details": {
+                "email": "toomas.kuusik-ots@example.com"
+            },
+            "projects": [
+                "Sumsing",
+                "Truelax",
+                "Quadronex",
+                "Medla",
+                "Zerphase"
+            ]
+        },
+        {
+            "fname": "Marek-Vello",
+            "lname": "Stepanov-Semjonov",
+            "position": "SALES",
+            "contact_details": {
+                "email": "marek-vello.stepanov-semjonov@example.com"
+            },
+            "projects": [
+                "Med La"
+            ]
+        },
+        {
+            "fname": "Oleg-Maie",
+            "lname": "Oja-Liiv",
+            "position": "TESTER",
+            "contact_details": {
+                "email": "oleg-maie.oja-liiv@example.com"
+            },
+            "projects": [
+                "Quaddom",
+                "Domsoft",
+                "Zimlab",
+                "Quadronex",
+                "Newron",
+                "Vilatone",
+                "Medla",
+                "Tresron",
+                "Konkeco"
+            ]
+        },
+        {
+            "fname": "Ivan-Kristina",
+            "lname": "Tamm-Kukk",
+            "position": "TESTER",
+            "contact_details": {
+                "email": "ivan-kristina.tamm-kukk@example.com"
+            },
+            "projects": [
+                "Blacknix",
+                "Plus-Zap",
+                "Warmlux",
+                "Dankix",
+                "Keykix",
+                "Topzap",
+                "Tran Lax"
+            ]
+        },
+        {
+            "fname": "Aleksander",
+            "lname": "Sepp-Kütt",
+            "position": "WEB",
+            "contact_details": {
+                "email": "aleksander.sepp-kutt@example.eu"
+            },
+            "projects": [
+                "Tin Saolax",
+                "Groovefax",
+                "Warmlux",
+                "Damlab",
+                "Tran Lax",
+                "Finbam",
+                "Super-Kix"
+            ]
+        },
+        {
+            "fname": "Vello-Tiiu",
+            "lname": "Oja-Karu",
+            "position": "ANDROID",
+            "contact_details": {
+                "email": "vello-tiiu.oja-karu@example.eu"
+            },
+            "projects": [
+                "Groovefax",
+                "Blacknix",
+                "Tinkayeco",
+                "Sailremtouch",
+                "Spancof",
+                "Double Nix",
+                "Zonenix"
+            ]
+        },
+        {
+            "fname": "Oleg",
+            "lname": "Ilves-Mihhailov",
+            "position": "IOS",
+            "contact_details": {
+                "email": "oleg.ilves-mihhailov@example.ee"
+            },
+            "projects": [
+                "Tinkayeco",
+                "Blackzenfax",
+                "Trisron",
+                "Villazentip",
+                "Alpha Sing"
+            ]
+        },
+        {
+            "fname": "Juri-Olga",
+            "lname": "Kütt",
+            "position": "ANDROID",
+            "contact_details": {
+                "email": "juri-olga.kutt@example.eu"
+            },
+            "projects": [
+                "Plus-Zap",
+                "Stan-Plus",
+                "Vilatone",
+                "Over Santough",
+                "Ontotop",
+                "Span Silkix",
+                "Antax"
+            ]
+        },
+        {
+            "fname": "Ljubov",
+            "lname": "Smirnov",
+            "position": "IOS",
+            "contact_details": {
+                "email": "ljubov.smirnov@example.eu"
+            },
+            "projects": [
+                "Tin Saolax",
+                "Quaddom",
+                "Tinkayeco",
+                "Stan-Plus",
+                "Span Silkix",
+                "Tresron",
+                "Zerphase"
+            ]
+        },
+        {
+            "fname": "Mati-Ivan",
+            "lname": "Kuusk",
+            "position": "WEB",
+            "contact_details": {
+                "email": "mati-ivan.kuusk@example.com"
+            },
+            "projects": [
+                "Truelax",
+                "Newron",
+                "Tran Lax"
+            ]
+        },
+        {
+            "fname": "Diana",
+            "lname": "Lepp-Lõhmus",
+            "position": "SALES",
+            "contact_details": {
+                "email": "diana.lepp-lohmus@example.ee"
+            },
+            "projects": [
+                "Blacktop",
+                "Groovefax",
+                "Scot Fix",
+                "Villazentip",
+                "Zamfax",
+                "Med La"
+            ]
+        },
+        {
+            "fname": "Peeter-Linda",
+            "lname": "Raudsepp",
+            "position": "WEB",
+            "contact_details": {
+                "email": "peeter-linda.raudsepp@example.com"
+            },
+            "projects": [
+                "Warmlux",
+                "Topzap"
+            ]
+        },
+        {
+            "fname": "Siim",
+            "lname": "Põder-Jõgi",
+            "position": "ANDROID",
+            "contact_details": {
+                "email": "siim.poder-jogi@example.com"
+            },
+            "projects": [
+                "Stronglight",
+                "Stan-Plus",
+                "Grooveeco",
+                "Sailremtouch",
+                "Sailsaolight",
+                "Truelax",
+                "Vilatone"
+            ]
+        },
+        {
+            "fname": "Irina-Mare",
+            "lname": "Raudsepp-Sokolov",
+            "position": "OTHER",
+            "contact_details": {
+                "email": "irina-mare.raudsepp-sokolov@example.eu",
+                "phone": "+372 535 247"
+            },
+            "projects": [
+                "Quaddom",
+                "Blackzenfax",
+                "Over Santough",
+                "Span Silkix",
+                "Matjob"
+            ]
+        },
+        {
+            "fname": "Kristina",
+            "lname": "Peterson",
+            "position": "TESTER",
+            "contact_details": {
+                "email": "kristina.peterson@example.eu"
+            },
+            "projects": [
+                "Plus-Zap",
+                "Zimlab",
+                "S-aptech",
+                "Alphaflex",
+                "Spancof",
+                "Stantip",
+                "Med La"
+            ]
+        },
+        {
+            "fname": "Maksim-Nadežda",
+            "lname": "Kukk",
+            "position": "SALES",
+            "contact_details": {
+                "email": "maksim-nade-da.kukk@example.ee"
+            },
+            "projects": [
+                "Zam Zendex",
+                "Keykix",
+                "Quadronex",
+                "Tresron",
+                "Warmfan"
+            ]
+        },
+        {
+            "fname": "Oleg",
+            "lname": "Ivanov",
+            "position": "WEB",
+            "contact_details": {
+                "email": "oleg.ivanov@example.eu",
+                "phone": "+372 592 327"
+            },
+            "projects": [
+                "Freedox",
+                "Quaddom",
+                "Stronglight",
+                "Dankix",
+                "Tinkayeco",
+                "Geo-Zap",
+                "Spancof",
+                "Med La",
+                "Super-Kix",
+                "Funtex"
+            ]
+        },
+        {
+            "fname": "Tiit-Viktoria",
+            "lname": "Koppel",
+            "position": "OTHER",
+            "contact_details": {
+                "email": "tiit-viktoria.koppel@example.com"
+            },
+            "projects": [
+                "Dankix",
+                "Newron",
+                "Big-Ex",
+                "Namjob",
+                "Spancof",
+                "Finbam",
+                "Super-Kix",
+                "Double Nix",
+                "Lamlax"
+            ]
+        },
+        {
+            "fname": "Anna-Jekaterina",
+            "lname": "Pärn-Kõiv",
+            "position": "ANDROID",
+            "contact_details": {
+                "email": "anna-jekaterina.parn-koiv@example.eu",
+                "phone": "+372 588 349"
+            },
+            "projects": [
+                "Quadronex",
+                "Alpha Sing",
+                "Finbam"
+            ]
+        },
+        {
+            "fname": "Katrin",
+            "lname": "Raudsepp",
+            "position": "WEB",
+            "contact_details": {
+                "email": "katrin.raudsepp@example.eu"
+            },
+            "projects": [
+                "Stan-Plus",
+                "Tran Lax"
+            ]
+        },
+        {
+            "fname": "Raivo-Mare",
+            "lname": "Petrov-Fjodorov",
+            "position": "SALES",
+            "contact_details": {
+                "email": "raivo-mare.petrov-fjodorov@example.ee",
+                "phone": "+372 559 184"
+            },
+            "projects": [
+                "Stan-Plus",
+                "Grooveeco",
+                "Blackzenfax",
+                "Over Santough",
+                "Big-Ex",
+                "Tran Lax",
+                "Tresron",
+                "Konkeco",
+                "Stronglab"
+            ]
+        },
+        {
+            "fname": "Niina",
+            "lname": "Põder-Vaher",
+            "position": "IOS",
+            "contact_details": {
+                "email": "niina.poder-vaher@example.com",
+                "phone": "+372 552 259"
+            },
+            "projects": [
+                "Stronglight",
+                "Tinkayeco",
+                "Fasetrax",
+                "Blackzenfax",
+                "Namjob",
+                "Antax"
+            ]
+        },
+        {
+            "fname": "Jelena",
+            "lname": "Ilves-Raudsepp",
+            "position": "WEB",
+            "contact_details": {
+                "email": "jelena.ilves-raudsepp@example.eu"
+            },
+            "projects": [
+                "Blacktop",
+                "Groovefax",
+                "Dankix",
+                "Keykix",
+                "Vilatone",
+                "Medla",
+                "Antax"
+            ]
+        },
+        {
+            "fname": "Sander-Sirje",
+            "lname": "Koppel-Kõiv",
+            "position": "PM",
+            "contact_details": {
+                "email": "sander-sirje.koppel-koiv@example.com"
+            },
+            "projects": [
+                "Blacktop",
+                "Ranwarm",
+                "Topzap",
+                "Blackzenfax",
+                "Vilatone",
+                "Vaianix",
+                "Roundhotstrong",
+                "Matjob",
+                "Warmfan"
+            ]
+        },
+        {
+            "fname": "Mihkel-Tiiu",
+            "lname": "Smirnov-Volkov",
+            "position": "IOS",
+            "contact_details": {
+                "email": "mihkel-tiiu.smirnov-volkov@example.ee"
+            },
+            "projects": [
+                "Stan-Plus",
+                "Big-Ex",
+                "Roundhotstrong"
+            ]
+        },
+        {
+            "fname": "Tamara",
+            "lname": "Stepanov-Semjonov",
+            "position": "TESTER",
+            "contact_details": {
+                "email": "tamara.stepanov-semjonov@example.eu"
+            },
+            "projects": [
+                "Ranwarm",
+                "Villazentip",
+                "Vaianix",
+                "Stantip"
+            ]
+        },
+        {
+            "fname": "Jekaterina",
+            "lname": "Kuusik",
+            "position": "TESTER",
+            "contact_details": {
+                "email": "jekaterina.kuusik@example.com"
+            },
+            "projects": [
+                "Scot Fix",
+                "Dankix",
+                "Grooveeco",
+                "Sailremtouch",
+                "Zaam-Eco",
+                "Villazentip",
+                "Tresron",
+                "Stronglab",
+                "Antax",
+                "Zonenix"
+            ]
+        },
+        {
+            "fname": "Jekaterina-Niina",
+            "lname": "Luik-Lõhmus",
+            "position": "OTHER",
+            "contact_details": {
+                "email": "jekaterina-niina.luik-lohmus@example.ee",
+                "phone": "+372 541 628"
+            },
+            "projects": [
+                "Vilatone",
+                "Big-Ex",
+                "Vaianix"
+            ]
+        },
+        {
+            "fname": "Aleksandr-Marika",
+            "lname": "Kivi-Kuusik",
+            "position": "ANDROID",
+            "contact_details": {
+                "email": "aleksandr-marika.kivi-kuusik@example.eu",
+                "phone": "+372 541 188"
+            },
+            "projects": [
+                "Quaddom",
+                "Tinkayeco",
+                "Keykix",
+                "Vaianix",
+                "Zamfax"
+            ]
+        },
+        {
+            "fname": "Pavel-Irina",
+            "lname": "Smirnov-Lõhmus",
+            "position": "PM",
+            "contact_details": {
+                "email": "pavel-irina.smirnov-lohmus@example.com"
+            },
+            "projects": [
+                "Keykix",
+                "Truelax"
+            ]
+        },
+        {
+            "fname": "Kate",
+            "lname": "Bell",
+            "position": "OTHER",
+            "contact_details": {
+                "email": "kate-bell@mac.com"
+            }
+        }
+    ]
+}
