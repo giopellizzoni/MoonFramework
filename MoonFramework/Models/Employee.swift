@@ -11,7 +11,7 @@ import Foundation
 
 public struct EmployeesData: Codable, Equatable {
     
-    let employees: [Employee]
+    public let employees: [Employee]
     
     public static func == (lhs: EmployeesData, rhs: EmployeesData) -> Bool {
         return lhs.employees == rhs.employees
@@ -24,11 +24,11 @@ public struct EmployeesData: Codable, Equatable {
 
 public struct Employee: Codable, Equatable {
     
-    let fname: String
-    let lname: String
-    let contactDetails: ContactDetails
-    let position: String
-    let projects: [String]?
+    public let fname: String
+    public let lname: String
+    public let contactDetails: ContactDetails
+    public let position: String
+    public let projects: [String]?
     
     public static func == (lhs: Employee, rhs: Employee) -> Bool {
         return (lhs.fname == rhs.fname && rhs.lname == rhs.lname)
@@ -46,8 +46,8 @@ public struct Employee: Codable, Equatable {
 }
 
 public struct ContactDetails: Codable {
-    let email: String
-    let phone: String?
+    public let email: String
+    public let phone: String?
     
     
     enum CodingKeys: String, CodingKey {
