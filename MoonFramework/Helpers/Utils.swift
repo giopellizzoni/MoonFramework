@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum URL: String {
+enum URLCity: String {
     case tallinnBaseURL = "https://tallinn-jobapp.aw.ee/employee_list"
     case tartuBaseURL = "https://tartu-jobapp.aw.ee/employee_list"
 }
