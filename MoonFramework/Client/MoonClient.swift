@@ -14,7 +14,7 @@ open class MoonClient {
     let session: URLSession
     let responseQueue: DispatchQueue?
     
-    init(baseURL: URL, session: URLSession, responseQueue: DispatchQueue?) {
+    public init(baseURL: URL, session: URLSession, responseQueue: DispatchQueue?) {
         self.baseURL = baseURL
         self.session = session
         self.responseQueue = responseQueue
