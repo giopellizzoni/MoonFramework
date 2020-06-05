@@ -9,7 +9,7 @@
 import Foundation
 
 
-class MoonClient {
+open class MoonClient {
     let baseURL: URL
     let session: URLSession
     let responseQueue: DispatchQueue?
