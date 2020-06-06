@@ -16,7 +16,7 @@ class MoonClientTests: XCTestCase {
     var mockSession: MockURLSession!
     
     var employeesURL: URL {
-        return URL(string: "employee", relativeTo: baseURL)!
+        return URL(string: "employee_list", relativeTo: baseURL)!
     }
     
     // MARK: - Initialization
