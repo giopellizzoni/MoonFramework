@@ -22,7 +22,7 @@ open class MoonClient {
     
     public func getEmployees(completion: @escaping (EmployeesData?, Error?) -> Void) -> URLSessionDataTask {
         let url = URL(string: "employee_list", relativeTo: baseURL)!        
-        let task = session.dataTask(with: url) { [weak self] (data, response, error) in
+        let task = session.dataTask(with: url) { [weak self] data, response, error in
             guard let self = self else { return }
             
             guard let response = response as? HTTPURLResponse,
