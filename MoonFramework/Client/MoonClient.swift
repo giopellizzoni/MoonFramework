@@ -14,7 +14,7 @@ open class MoonClient {
     let session: URLSession
     let responseQueue: DispatchQueue?
     
-    static let shared = MoonClient(baseURL: URL(string: URLCity.tallinnBaseURL.rawValue)!,
+    public static let shared = MoonClient(baseURL: URL(string: URLCity.tallinnBaseURL.rawValue)!,
                                    session: URLSession(configuration: .default),
                                    responseQueue: nil)
     
