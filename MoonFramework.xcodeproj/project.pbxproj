@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		AEE98B7D24AE33AB00F331B7 /* ContactLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE98B7C24AE33AB00F331B7 /* ContactLoaderTests.swift */; };
+		AEE98B8824AE39CA00F331B7 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE98B8724AE39CA00F331B7 /* Loader.swift */; };
+		AEE98B8B24AE3A4800F331B7 /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE98B8A24AE3A4800F331B7 /* Employee.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -21,11 +23,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		AEE98B6F24AE33AB00F331B7 /* Data.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Data.framework; path = /Users/pellizzoni/Documents/Assignment/Practice/MoonFramework/build/Debug/Data.framework; sourceTree = "<absolute>"; };
 		AEE98B7224AE33AB00F331B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AEE98B7724AE33AB00F331B7 /* DataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = DataTests.xctest; path = /Users/pellizzoni/Documents/Assignment/Practice/MoonFramework/build/Debug/DataTests.xctest; sourceTree = "<absolute>"; };
 		AEE98B7C24AE33AB00F331B7 /* ContactLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactLoaderTests.swift; sourceTree = "<group>"; };
 		AEE98B7E24AE33AB00F331B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AEE98B8624AE39CA00F331B7 /* Data.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Data.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AEE98B8724AE39CA00F331B7 /* Loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
+		AEE98B8924AE39CA00F331B7 /* DataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AEE98B8A24AE3A4800F331B7 /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +55,8 @@
 			children = (
 				AEE98B7024AE33AB00F331B7 /* Data */,
 				AEE98B7B24AE33AB00F331B7 /* DataTests */,
+				AEE98B8624AE39CA00F331B7 /* Data.framework */,
+				AEE98B8924AE39CA00F331B7 /* DataTests.xctest */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +64,8 @@
 			isa = PBXGroup;
 			children = (
 				AEE98B7224AE33AB00F331B7 /* Info.plist */,
+				AEE98B8724AE39CA00F331B7 /* Loader.swift */,
+				AEE98B8A24AE3A4800F331B7 /* Employee.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -99,7 +107,7 @@
 			);
 			name = Data;
 			productName = Data;
-			productReference = AEE98B6F24AE33AB00F331B7 /* Data.framework */;
+			productReference = AEE98B8624AE39CA00F331B7 /* Data.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		AEE98B7624AE33AB00F331B7 /* DataTests */ = {
@@ -117,7 +125,7 @@
 			);
 			name = DataTests;
 			productName = DataTests;
-			productReference = AEE98B7724AE33AB00F331B7 /* DataTests.xctest */;
+			productReference = AEE98B8924AE39CA00F331B7 /* DataTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -132,6 +140,7 @@
 				TargetAttributes = {
 					AEE98B6E24AE33AB00F331B7 = {
 						CreatedOnToolsVersion = 11.5;
+						LastSwiftMigration = 1150;
 					};
 					AEE98B7624AE33AB00F331B7 = {
 						CreatedOnToolsVersion = 11.5;
@@ -179,6 +188,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEE98B8824AE39CA00F331B7 /* Loader.swift in Sources */,
+				AEE98B8B24AE3A4800F331B7 /* Employee.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,6 +335,7 @@
 		AEE98B8124AE33AB00F331B7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -343,6 +355,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -350,6 +363,7 @@
 		AEE98B8224AE33AB00F331B7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -376,6 +390,7 @@
 		AEE98B8424AE33AB00F331B7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = U58B9B4JZB;
@@ -396,6 +411,7 @@
 		AEE98B8524AE33AB00F331B7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = U58B9B4JZB;
