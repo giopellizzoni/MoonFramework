@@ -43,6 +43,12 @@ class ContactsLoaderTest: XCTestCase {
     }
     
     
+    
+    
+    
+}
+
+extension ContactsLoaderTest {
     class HTTPGetClientSpy: HTTPGetClient {
         var url: URL?
         
@@ -50,6 +56,4 @@ class ContactsLoaderTest: XCTestCase {
             self.url = url
         }
     }
-    
-    
 }
