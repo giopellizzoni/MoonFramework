@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		AEB76C9E2489B41E00DEAD82 /* MoonFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEB76C942489B41E00DEAD82 /* MoonFramework.framework */; };
 		AEB76CC52489E00C00DEAD82 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB76CC42489E00C00DEAD82 /* Utils.swift */; };
+		AEE98B4924AD6FE700F331B7 /* ContactsLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE98B4824AD6FE700F331B7 /* ContactsLoaderTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +28,7 @@
 		AEB76C9D2489B41E00DEAD82 /* MoonFrameworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoonFrameworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEB76CA42489B41E00DEAD82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AEB76CC42489E00C00DEAD82 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		AEE98B4824AD6FE700F331B7 /* ContactsLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsLoaderTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				AEB76CA42489B41E00DEAD82 /* Info.plist */,
+				AEE98B4824AD6FE700F331B7 /* ContactsLoaderTests.swift */,
 			);
 			path = MoonFrameworkTests;
 			sourceTree = "<group>";
@@ -209,6 +212,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEE98B4924AD6FE700F331B7 /* ContactsLoaderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,6 +367,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.pellizzonicode.MoonFramework;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos macos";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -389,6 +394,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.pellizzonicode.MoonFramework;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos macos";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -409,6 +415,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.pellizzonicode.MoonFrameworkTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos macos";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -430,6 +437,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.pellizzonicode.MoonFrameworkTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos macos";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
