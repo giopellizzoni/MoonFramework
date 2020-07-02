@@ -38,8 +38,22 @@ class ContactLoaderTests: XCTestCase {
     }
     
     
-    
+    func test_load_deliversErroOnCientErrors () {
+        let (sut, client) = makeSUT()
+        
+        client.error = NSError(domain: "Test", code: 0)
+        
+        var capturedError: ContactsLoader.Error?
+        
+        sut.load { error in
+            capturedError = error
+        }
+        
+        XCTAssertEqual(capturedError, .connectivity)
+        
+    }
 }
+
 // MARK: - Helpers
 
 extension ContactLoaderTests {
@@ -54,8 +68,12 @@ extension ContactLoaderTests {
     
     private class HTTPClientSpy : HTTPClient {
         var requestedURLs = [URL]()
+        var error: Error?
         
-        func get(from url: URL)  {
+        func get(from url: URL, completion: @escaping (Error) -> Void)  {
+            if let error = error {
+                completion(error)
+            }
             requestedURLs.append(url)
         }
     }
