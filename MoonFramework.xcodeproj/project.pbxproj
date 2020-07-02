@@ -8,13 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AEB76C9E2489B41E00DEAD82 /* MoonFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEB76C942489B41E00DEAD82 /* MoonFramework.framework */; };
-		AEB76CB02489B4E000DEAD82 /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB76CAF2489B4E000DEAD82 /* Employee.swift */; };
 		AEB76CC52489E00C00DEAD82 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB76CC42489E00C00DEAD82 /* Utils.swift */; };
-		AEB76CC72489E13A00DEAD82 /* MoonClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB76CC62489E13A00DEAD82 /* MoonClient.swift */; };
-		AEB76CC92489E15600DEAD82 /* MoonClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB76CC82489E15600DEAD82 /* MoonClientTests.swift */; };
-		AEB76CCC248A96B300DEAD82 /* Contacts_Valid_JSON.json in Resources */ = {isa = PBXBuildFile; fileRef = AEB76CCB248A96B300DEAD82 /* Contacts_Valid_JSON.json */; };
-		AEB76CCE248A96E200DEAD82 /* Contacts_Invalid_JSON.json in Resources */ = {isa = PBXBuildFile; fileRef = AEB76CCD248A96E200DEAD82 /* Contacts_Invalid_JSON.json */; };
-		AEB76CD0248A96FF00DEAD82 /* Data+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB76CCF248A96FF00DEAD82 /* Data+JSON.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,13 +26,7 @@
 		AEB76C982489B41E00DEAD82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AEB76C9D2489B41E00DEAD82 /* MoonFrameworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoonFrameworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEB76CA42489B41E00DEAD82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AEB76CAF2489B4E000DEAD82 /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
 		AEB76CC42489E00C00DEAD82 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
-		AEB76CC62489E13A00DEAD82 /* MoonClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonClient.swift; sourceTree = "<group>"; };
-		AEB76CC82489E15600DEAD82 /* MoonClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonClientTests.swift; sourceTree = "<group>"; };
-		AEB76CCB248A96B300DEAD82 /* Contacts_Valid_JSON.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Contacts_Valid_JSON.json; sourceTree = "<group>"; };
-		AEB76CCD248A96E200DEAD82 /* Contacts_Invalid_JSON.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Contacts_Invalid_JSON.json; sourceTree = "<group>"; };
-		AEB76CCF248A96FF00DEAD82 /* Data+JSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+JSON.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,8 +70,6 @@
 			isa = PBXGroup;
 			children = (
 				AEB76CC32489DFF200DEAD82 /* Helpers */,
-				AEB76CB12489B63F00DEAD82 /* Client */,
-				AEB76CAE2489B4BE00DEAD82 /* Models */,
 				AEB76C982489B41E00DEAD82 /* Info.plist */,
 			);
 			path = MoonFramework;
@@ -92,44 +78,9 @@
 		AEB76CA12489B41E00DEAD82 /* MoonFrameworkTests */ = {
 			isa = PBXGroup;
 			children = (
-				AEB76CC22489DFD900DEAD82 /* Data */,
-				AEB76CB32489B6BD00DEAD82 /* ClientTests */,
 				AEB76CA42489B41E00DEAD82 /* Info.plist */,
 			);
 			path = MoonFrameworkTests;
-			sourceTree = "<group>";
-		};
-		AEB76CAE2489B4BE00DEAD82 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				AEB76CAF2489B4E000DEAD82 /* Employee.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		AEB76CB12489B63F00DEAD82 /* Client */ = {
-			isa = PBXGroup;
-			children = (
-				AEB76CC62489E13A00DEAD82 /* MoonClient.swift */,
-			);
-			path = Client;
-			sourceTree = "<group>";
-		};
-		AEB76CB32489B6BD00DEAD82 /* ClientTests */ = {
-			isa = PBXGroup;
-			children = (
-				AEB76CC82489E15600DEAD82 /* MoonClientTests.swift */,
-			);
-			path = ClientTests;
-			sourceTree = "<group>";
-		};
-		AEB76CC22489DFD900DEAD82 /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				AEB76CCA248A968500DEAD82 /* JSON Files */,
-				AEB76CCF248A96FF00DEAD82 /* Data+JSON.swift */,
-			);
-			path = Data;
 			sourceTree = "<group>";
 		};
 		AEB76CC32489DFF200DEAD82 /* Helpers */ = {
@@ -138,15 +89,6 @@
 				AEB76CC42489E00C00DEAD82 /* Utils.swift */,
 			);
 			path = Helpers;
-			sourceTree = "<group>";
-		};
-		AEB76CCA248A968500DEAD82 /* JSON Files */ = {
-			isa = PBXGroup;
-			children = (
-				AEB76CCB248A96B300DEAD82 /* Contacts_Valid_JSON.json */,
-				AEB76CCD248A96E200DEAD82 /* Contacts_Invalid_JSON.json */,
-			);
-			path = "JSON Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,8 +191,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AEB76CCE248A96E200DEAD82 /* Contacts_Invalid_JSON.json in Resources */,
-				AEB76CCC248A96B300DEAD82 /* Contacts_Valid_JSON.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,9 +201,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AEB76CB02489B4E000DEAD82 /* Employee.swift in Sources */,
 				AEB76CC52489E00C00DEAD82 /* Utils.swift in Sources */,
-				AEB76CC72489E13A00DEAD82 /* MoonClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,8 +209,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AEB76CC92489E15600DEAD82 /* MoonClientTests.swift in Sources */,
-				AEB76CD0248A96FF00DEAD82 /* Data+JSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
