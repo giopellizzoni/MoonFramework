@@ -7,34 +7,7 @@
 //
 
 import XCTest
-
-
-class ContactsLoader {
-    private let url: URL
-    private let client: HTTPClient
-    
-    init(url: URL , client: HTTPClient) {
-        self.client = client
-        self.url = url
-    }
-    
-    func load() {
-        client.get(from: url)
-    }
-}
-protocol HTTPClient {
-    
-    func get(from url: URL)
-}
-
-class HTTPClientSpy : HTTPClient {
-    
-    var requestedURL: URL?
-    
-    func get(from url: URL)  {
-     requestedURL = url
-    }
-}
+import Data
 
 class ContactLoaderTests: XCTestCase {
 
@@ -47,8 +20,8 @@ class ContactLoaderTests: XCTestCase {
     }
     
     func test_load_requestDataFromURL() {
-        let (sut, client) = makeSUT()
-        
+        let url = URL(string: "http://a-give-url.com")!
+        let (sut, client) = makeSUT(url: url)
         sut.load()
         
         XCTAssertNotNil(client.requestedURL)
@@ -58,15 +31,24 @@ class ContactLoaderTests: XCTestCase {
 
 
 }
-
+// MARK: - Helpers
 
 extension ContactLoaderTests {
-    func makeSUT(url: URL = URL(string: "http://a-url.com")!) -> (sut: ContactsLoader, client: HTTPClientSpy)  {
+    private func makeSUT(url: URL = URL(string: "http://a-url.com")!) -> (sut: ContactsLoader, client: HTTPClientSpy)  {
         
         let client = HTTPClientSpy()
         let sut = ContactsLoader(url: url, client: client)
         
         return (sut, client)
         
+    }
+    
+    private class HTTPClientSpy : HTTPClient {
+        
+        var requestedURL: URL?
+        
+        func get(from url: URL)  {
+         requestedURL = url
+        }
     }
 }
