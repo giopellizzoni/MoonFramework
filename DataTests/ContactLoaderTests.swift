@@ -41,19 +41,10 @@ class ContactLoaderTests: XCTestCase {
     func test_load_deliversErrorOnCientErrors () {
         let (sut, client) = makeSUT()
         
-        
-        var capturedError = [ContactsLoader.Error]()
-        
-        sut.load { error in
-            capturedError.append(error)
-        }
-        
-        let clientError = NSError(domain: "Test", code: 0)
-        
-        client.complete(with: clientError)
-        
-        XCTAssertEqual(capturedError, [.connectivity])
-        
+        expect(sut, toCompleteWithError: .connectivity, when: {
+            let clientError = NSError(domain: "Test", code: 0)
+            client.complete(with: clientError)
+        })
     }
     
     func test_load_deliversErrorOnNon200HTTPResponse () {
@@ -62,18 +53,22 @@ class ContactLoaderTests: XCTestCase {
         let samples = [199,201,300,400,500]
         
         samples.enumerated().forEach { (index, code) in
-            var capturedError = [ContactsLoader.Error]()
-            
-            sut.load { error in
-                capturedError.append(error)
-            }
-            client.complete(withStatusCode: code, at: index)
-            
-            XCTAssertEqual(capturedError, [.invalidData])
-            
+            expect(sut, toCompleteWithError: .invalidData, when: {
+                client.complete(withStatusCode: code, at: index)
+            })
         }
-        
     }
+    
+    func test_load_deliversErrorOn200HTTPResponseWithInvalidJSON() {
+        
+        let (sut, client) = makeSUT()
+        
+        expect(sut, toCompleteWithError: .invalidData, when: {
+            let invalidJSON = Data("invalid json".utf8)
+            client.complete(withStatusCode: 200, data: invalidJSON)
+        })
+    }
+    
 }
 
 // MARK: - Helpers
@@ -88,8 +83,16 @@ extension ContactLoaderTests {
         
     }
     
+    private func expect(_ sut: ContactsLoader, toCompleteWithError error: ContactsLoader.Error, when action: () -> Void, file: StaticString = #file, line: UInt = #line) {
+        var capturedError = [ContactsLoader.Error]()
+        
+        sut.load { capturedError.append($0)}
+        action()
+        XCTAssertEqual(capturedError, [error], file:file, line: line)
+    }
+    
     private class HTTPClientSpy : HTTPClient {
-               
+        
         var requestedURLs: [URL] {
             return messages.map { $0.url }
         }
@@ -104,13 +107,13 @@ extension ContactLoaderTests {
             messages[index].completion(.failure(error))
         }
         
-        func complete(withStatusCode code: Int = 200, at index: Int = 0) {
+        func complete(withStatusCode code: Int = 200, data: Data = Data(), at index: Int = 0) {
             let response  = HTTPURLResponse(url: URL(string: "http://a-url.com")!,
                                             statusCode: code,
                                             httpVersion: nil,
                                             headerFields: nil)!
             
-            messages[index].completion(.success(response))
+            messages[index].completion(.success(data, response))
         }
     }
 }
