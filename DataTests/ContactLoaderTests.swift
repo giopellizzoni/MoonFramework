@@ -22,7 +22,7 @@ class ContactLoaderTests: XCTestCase {
     func test_load_requestsDataFromURL() {
         let url = URL(string: "http://a-give-url.com")!
         let (sut, client) = makeSUT(url: url)
-        sut.load()
+        sut.load { _ in }
         
         XCTAssertEqual(client.requestedURLs, [url])
     }
@@ -31,28 +31,47 @@ class ContactLoaderTests: XCTestCase {
         let url = URL(string: "http://a-give-url.com")!
         let (sut, client) = makeSUT(url: url)
         
-        sut.load()
-        sut.load()
+        sut.load { _ in }
+        sut.load { _ in }
         
         XCTAssertEqual(client.requestedURLs, [url, url])
     }
     
     
-    func test_load_deliversErroOnCientErrors () {
+    func test_load_deliversErrorOnCientErrors () {
         let (sut, client) = makeSUT()
         
         
-        var capturedError: ContactsLoader.Error?
+        var capturedError = [ContactsLoader.Error]()
         
         sut.load { error in
-            capturedError = error
+            capturedError.append(error)
         }
         
         let clientError = NSError(domain: "Test", code: 0)
         
         client.complete(with: clientError)
         
-        XCTAssertEqual(capturedError, .connectivity)
+        XCTAssertEqual(capturedError, [.connectivity])
+        
+    }
+    
+    func test_load_deliversErrorOnNon200HTTPResponse () {
+        let (sut, client) = makeSUT()
+        
+        let samples = [199,201,300,400,500]
+        
+        samples.enumerated().forEach { (index, code) in
+            var capturedError = [ContactsLoader.Error]()
+            
+            sut.load { error in
+                capturedError.append(error)
+            }
+            client.complete(withStatusCode: code, at: index)
+            
+            XCTAssertEqual(capturedError, [.invalidData])
+            
+        }
         
     }
 }
@@ -70,16 +89,28 @@ extension ContactLoaderTests {
     }
     
     private class HTTPClientSpy : HTTPClient {
-        var requestedURLs = [URL]()
-        var completions = [(Error) -> Void]()
+               
+        var requestedURLs: [URL] {
+            return messages.map { $0.url }
+        }
+        var completions = [(Error?, HTTPURLResponse?) -> Void]()
+        private var messages = [(url: URL, completion: (Error?, HTTPURLResponse?) -> Void)]()
         
-        func get(from url: URL, completion: @escaping (Error) -> Void)  {
-            completions.append(completion)
-            requestedURLs.append(url)
+        func get(from url: URL, completion: @escaping (Error?, HTTPURLResponse?) -> Void)  {
+            messages.append((url, completion))
         }
         
         func complete(with error: Error, at index: Int = 0) {
-            completions[index](error)
+            messages[index].completion(error, nil)
+        }
+        
+        func complete(withStatusCode code: Int = 200, at index: Int = 0) {
+            let response  = HTTPURLResponse(url: URL(string: "http://a-url.com")!,
+                                            statusCode: code,
+                                            httpVersion: nil,
+                                            headerFields: nil)
+            
+            messages[index].completion(nil, response)
         }
     }
 }
