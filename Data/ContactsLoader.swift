@@ -36,15 +36,51 @@ public final class ContactsLoader {
         self.url = url
     }
     
+    private struct EmployeesRoot: Decodable {
+        let employees: [Contacts]
+    }
+
+
+    private struct Contacts: Codable{
+        let name, lname: String
+        let contactDetails: ContactDetails
+        let position: String
+        let projects: String?
+        
+        var employee: Employee {
+            return Employee(name: name, lname: lname, contactDetails: contactDetails, position: position, projects: projects)
+        }
+        
+        private struct ContactDetailst: Codable, Equatable {
+            public let email: String
+            public let phone: String?
+        }
+        
+        enum CodingKeys: String, CodingKey {
+            case name, lname
+            case contactDetails = "contact_details"
+            case position, projects
+        }
+    }
+    private class EmployeesMapper {
+        static func map(_ data: Data, _ response: HTTPURLResponse) throws -> [Employee] {
+            guard response.statusCode == 200 else { throw ContactsLoader.Error.invalidData }
+            let employees = try JSONDecoder().decode(EmployeesRoot.self, from: data)
+            return employees.employees.map { $0.employee }
+        }
+    }
+    
     public func load(completion: @escaping (Result) -> Void) {
         client.get(from: url) { result in
             
             switch result {
-            case let .success(data, _):
+            case let .success(data, response):
                 
-                if let _ = try? JSONSerialization.jsonObject(with: data) {
-                    completion(.success([]))
-                } else {
+                do {
+                    let employees = try EmployeesMapper.map(data, response)
+                    
+                    completion(.success(employees))
+                } catch {
                     completion(.failure(.invalidData))
                 }
             case .failure:

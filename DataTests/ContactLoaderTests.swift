@@ -54,7 +54,7 @@ class ContactLoaderTests: XCTestCase {
         
         samples.enumerated().forEach { (index, code) in
             expect(sut, toCompleteWithResult: .failure(.invalidData), when: {
-                client.complete(withStatusCode: code, at: index)
+                client.complete(withStatusCode: code, data: makeJson([]), at: index)
             })
         }
     }
@@ -72,9 +72,25 @@ class ContactLoaderTests: XCTestCase {
     func test_load_deliversNoItemsOn200HTTPURLResponseWithEmptyJson() {
         let (sut, client) = makeSUT()
         expect(sut, toCompleteWithResult: .success([]), when: {
-            let emptyJson = Data("{\"employees\": []}".utf8)
+            let emptyJson = makeJson([])
             client.complete(withStatusCode: 200, data: emptyJson)
         })
+    }
+    
+    func test_load_deliverItensOn200HTTPURLResponseWithValidJson() {
+        
+        let (sut, client) = makeSUT()
+        
+        let emp1 = makeEmployee(name: "Giovanni", lname: "Pellizzoni", contactDetails: ContactDetails(email: "a-email@.com", phone: "1199"), position: "iOS", projects: "NEW CAR")
+        
+        let emp2 = makeEmployee(name: "John", lname: "Doe", contactDetails: ContactDetails(email: "a-email@.com", phone: "1199"), position: "iOS", projects: "OLD FLAG")
+        
+        
+        expect(sut, toCompleteWithResult: .success([emp1.model, emp2.model]), when: {
+            let employeesJson = makeJson([emp1.json, emp2.json])
+            client.complete(withStatusCode: 200, data:employeesJson)
+        })
+        
     }
 }
 
@@ -88,6 +104,28 @@ extension ContactLoaderTests {
         
         return (sut, client)
         
+    }
+    func makeJson(_ contacts: [[String: Any]]) -> Data {
+        let json = ["employees": contacts]
+        return try! JSONSerialization.data(withJSONObject: json)
+    }
+    
+    func makeEmployee(name: String, lname: String, contactDetails: ContactDetails, position: String, projects: String?) -> (model: Employee, json: [String: Any]) {
+        
+        let employee =  Employee(name: name, lname: lname, contactDetails: contactDetails, position: position, projects: projects)
+        
+        let json: [String: Any] = [
+                "name": name,
+                "lname": lname,
+                "contact_details": [
+                    "email": contactDetails.email,
+                    "phone": contactDetails.phone ?? ""
+                ],
+                "position": position,
+                "projects": projects ?? ""
+        ]
+        
+        return (employee, json)
     }
     
     private func expect(_ sut: ContactsLoader, toCompleteWithResult result: ContactsLoader.Result, when action: () -> Void, file: StaticString = #file, line: UInt = #line) {
@@ -114,7 +152,7 @@ extension ContactLoaderTests {
             messages[index].completion(.failure(error))
         }
         
-        func complete(withStatusCode code: Int = 200, data: Data = Data(), at index: Int = 0) {
+        func complete(withStatusCode code: Int = 200, data: Data, at index: Int = 0) {
             let response  = HTTPURLResponse(url: URL(string: "http://a-url.com")!,
                                             statusCode: code,
                                             httpVersion: nil,
