@@ -9,7 +9,7 @@
 import Foundation
 
 // MARK: - Employee
-struct Employee: Codable {
+public struct Employee: Codable, Equatable{
     let name, lname: String
     let contactDetails: ContactDetails
     let position: String
@@ -23,6 +23,6 @@ struct Employee: Codable {
 }
 
 // MARK: - ContactDetails
-struct ContactDetails: Codable {
+struct ContactDetails: Codable, Equatable {
     let email, phone: String
 }

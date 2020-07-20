@@ -41,7 +41,7 @@ class ContactLoaderTests: XCTestCase {
     func test_load_deliversErrorOnCientErrors () {
         let (sut, client) = makeSUT()
         
-        expect(sut, toCompleteWithError: .connectivity, when: {
+        expect(sut, toCompleteWithResult: .failure(.connectivity), when: {
             let clientError = NSError(domain: "Test", code: 0)
             client.complete(with: clientError)
         })
@@ -53,7 +53,7 @@ class ContactLoaderTests: XCTestCase {
         let samples = [199,201,300,400,500]
         
         samples.enumerated().forEach { (index, code) in
-            expect(sut, toCompleteWithError: .invalidData, when: {
+            expect(sut, toCompleteWithResult: .failure(.invalidData), when: {
                 client.complete(withStatusCode: code, at: index)
             })
         }
@@ -63,12 +63,19 @@ class ContactLoaderTests: XCTestCase {
         
         let (sut, client) = makeSUT()
         
-        expect(sut, toCompleteWithError: .invalidData, when: {
+        expect(sut, toCompleteWithResult: .failure(.invalidData), when: {
             let invalidJSON = Data("invalid json".utf8)
             client.complete(withStatusCode: 200, data: invalidJSON)
         })
     }
     
+    func test_load_deliversNoItemsOn200HTTPURLResponseWithEmptyJson() {
+        let (sut, client) = makeSUT()
+        expect(sut, toCompleteWithResult: .success([]), when: {
+            let emptyJson = Data("{\"employees\": []}".utf8)
+            client.complete(withStatusCode: 200, data: emptyJson)
+        })
+    }
 }
 
 // MARK: - Helpers
@@ -83,12 +90,12 @@ extension ContactLoaderTests {
         
     }
     
-    private func expect(_ sut: ContactsLoader, toCompleteWithError error: ContactsLoader.Error, when action: () -> Void, file: StaticString = #file, line: UInt = #line) {
-        var capturedError = [ContactsLoader.Error]()
+    private func expect(_ sut: ContactsLoader, toCompleteWithResult result: ContactsLoader.Result, when action: () -> Void, file: StaticString = #file, line: UInt = #line) {
+        var capturedResult = [ContactsLoader.Result]()
         
-        sut.load { capturedError.append($0)}
+        sut.load { capturedResult.append($0)}
         action()
-        XCTAssertEqual(capturedError, [error], file:file, line: line)
+        XCTAssertEqual(capturedResult, [result], file:file, line: line)
     }
     
     private class HTTPClientSpy : HTTPClient {
