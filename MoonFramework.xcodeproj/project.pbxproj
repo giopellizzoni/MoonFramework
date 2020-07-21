@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AEADB23B24C763A400C8D597 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEADB23A24C763A400C8D597 /* HTTPClient.swift */; };
+		AEADB23D24C77CFB00C8D597 /* EmployeesMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEADB23C24C77CFB00C8D597 /* EmployeesMapper.swift */; };
 		AEE98B7D24AE33AB00F331B7 /* ContactLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE98B7C24AE33AB00F331B7 /* ContactLoaderTests.swift */; };
-		AEE98B8824AE39CA00F331B7 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE98B8724AE39CA00F331B7 /* Loader.swift */; };
 		AEE98B8B24AE3A4800F331B7 /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE98B8A24AE3A4800F331B7 /* Employee.swift */; };
 		AEE98B8D24AE3EF600F331B7 /* ContactsLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE98B8C24AE3EF600F331B7 /* ContactsLoader.swift */; };
 /* End PBXBuildFile section */
@@ -24,11 +25,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AEADB23A24C763A400C8D597 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		AEADB23C24C77CFB00C8D597 /* EmployeesMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesMapper.swift; sourceTree = "<group>"; };
 		AEE98B7224AE33AB00F331B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AEE98B7C24AE33AB00F331B7 /* ContactLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactLoaderTests.swift; sourceTree = "<group>"; };
 		AEE98B7E24AE33AB00F331B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AEE98B8624AE39CA00F331B7 /* Data.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Data.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		AEE98B8724AE39CA00F331B7 /* Loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
 		AEE98B8924AE39CA00F331B7 /* DataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEE98B8A24AE3A4800F331B7 /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
 		AEE98B8C24AE3EF600F331B7 /* ContactsLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsLoader.swift; sourceTree = "<group>"; };
@@ -52,6 +54,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AEADB23824C7634D00C8D597 /* Contacts API */ = {
+			isa = PBXGroup;
+			children = (
+				AEE98B8C24AE3EF600F331B7 /* ContactsLoader.swift */,
+				AEADB23A24C763A400C8D597 /* HTTPClient.swift */,
+				AEADB23C24C77CFB00C8D597 /* EmployeesMapper.swift */,
+			);
+			path = "Contacts API";
+			sourceTree = "<group>";
+		};
+		AEADB23924C7636800C8D597 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AEE98B8A24AE3A4800F331B7 /* Employee.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		AEB76C8A2489B41E00DEAD82 = {
 			isa = PBXGroup;
 			children = (
@@ -65,10 +85,9 @@
 		AEE98B7024AE33AB00F331B7 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				AEADB23924C7636800C8D597 /* Model */,
+				AEADB23824C7634D00C8D597 /* Contacts API */,
 				AEE98B7224AE33AB00F331B7 /* Info.plist */,
-				AEE98B8724AE39CA00F331B7 /* Loader.swift */,
-				AEE98B8A24AE3A4800F331B7 /* Employee.swift */,
-				AEE98B8C24AE3EF600F331B7 /* ContactsLoader.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -191,9 +210,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AEE98B8824AE39CA00F331B7 /* Loader.swift in Sources */,
 				AEE98B8B24AE3A4800F331B7 /* Employee.swift in Sources */,
+				AEADB23B24C763A400C8D597 /* HTTPClient.swift in Sources */,
 				AEE98B8D24AE3EF600F331B7 /* ContactsLoader.swift in Sources */,
+				AEADB23D24C77CFB00C8D597 /* EmployeesMapper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

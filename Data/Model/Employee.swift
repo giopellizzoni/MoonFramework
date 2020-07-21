@@ -9,7 +9,7 @@
 import Foundation
 
 // MARK: - Employee
-public struct Employee: Codable, Equatable{
+public struct Employee: Codable, Equatable {
     public let name, lname: String
     public let contactDetails: ContactDetails
     public let position: String
@@ -21,12 +21,6 @@ public struct Employee: Codable, Equatable{
         self.contactDetails = ContactDetails(email: contactDetails.email, phone: contactDetails.phone)
         self.position = position
         self.projects = projects
-    }
-    
-    enum CodingKeys: String, CodingKey {
-        case name, lname
-        case contactDetails = "contact_details"
-        case position, projects
     }
 }
 

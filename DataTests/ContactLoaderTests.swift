@@ -90,8 +90,23 @@ class ContactLoaderTests: XCTestCase {
             let employeesJson = makeJson([emp1.json, emp2.json])
             client.complete(withStatusCode: 200, data:employeesJson)
         })
-        
     }
+    
+    func test_load_doesNotDeliverResultAfterSUTDeallocated() {
+        let url = URL(string: "a-url.com")!
+        let client = HTTPClientSpy()
+        
+        var sut: ContactsLoader? = ContactsLoader(url: url, client: client)
+        
+        var capturedResult = [ContactsLoader.Result]()
+        sut?.load { capturedResult.append($0)}
+        sut = nil
+        client.complete(withStatusCode: 200, data: makeJson([]))
+        
+        
+        XCTAssertTrue(capturedResult.isEmpty)
+    }
+    
 }
 
 // MARK: - Helpers
@@ -102,12 +117,21 @@ extension ContactLoaderTests {
         let client = HTTPClientSpy()
         let sut = ContactsLoader(url: url, client: client)
         
+        checkForMemoryLeaks(sut)
+        checkForMemoryLeaks(client)
+        
         return (sut, client)
         
     }
     func makeJson(_ contacts: [[String: Any]]) -> Data {
         let json = ["employees": contacts]
         return try! JSONSerialization.data(withJSONObject: json)
+    }
+    
+    func checkForMemoryLeaks(_ instance: AnyObject, file: StaticString = #file, line: UInt = #line){
+        addTeardownBlock { [weak instance] in
+            XCTAssertNil(instance, file: file, line: line)
+        }
     }
     
     func makeEmployee(name: String, lname: String, contactDetails: ContactDetails, position: String, projects: String?) -> (model: Employee, json: [String: Any]) {
